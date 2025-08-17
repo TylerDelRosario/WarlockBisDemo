@@ -1,0 +1,98 @@
+h1 {
+    font-family: Fontin, Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    background: -webkit-linear-gradient(270deg, #FF7757 0%, #F1C22D 100%);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-align: center;
+}
+
+.gearset {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.armor {
+    display: flex;
+    justify-content: center;
+}
+
+.weaponset {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.side {
+    margin: 0px 0px;
+}
+
+.slot-container {
+    padding: 5px;
+}
+
+nav {
+    color: white;
+
+    display: flex;
+    justify-content: center;
+}
+
+.current-spec {
+    font-family: Fontin, Arial, helvetica, sans-serif;
+    text-transform: uppercase;
+    margin: 0px 25px;
+
+    cursor: pointer;
+}
+
+.current-spec svg {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 5px;
+}
+
+.current-header {
+    display: flex;
+    align-items: center;
+}
+
+.current-spec ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+
+    background-color: black;
+    color: white;
+
+    position: absolute;
+    display: none;
+}
+
+.current-spec li {
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.current-spec li span {
+    border-bottom: 1px solid black;
+    transition: all 0.3s;
+}
+
+.current-spec li span:hover {
+    border-bottom: 1px solid white;
+    transition: all 0.3s;
+}
+
+.gear-tables {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,107 @@
+<div #icon class="item-container" [ngStyle]="containerStyles">
+    <div class="tile" [ngStyle]="itemStyles">
+        <div class="tile-inset" [ngStyle]="hovered()" (mousemove)="mouseMove($event)" (mouseover)="mouseOver($event)" (mouseout)="mouseOut()">
+
+            <div class="tooltip" [style.display]="isHovered ? 'block' : 'none'" [style.left]="xOffset() + 'px'" [style.top]="yOffset() + 'px'">
+                <h4 class="{{this.info.quality}} item-name">{{this.info.name}}</h4>
+
+                @if (this.info.binding) {
+                    <span class="item-binding">Binds {{this.info.binding}}</span>
+                }
+
+                @if (this.info.unique) {
+                    <span class="item-unique">Unique</span>
+                }
+
+                <div class="item-type">
+                    <span>{{this.info.slot}}</span>
+
+                    @if (this.info.type) {
+                        <span>{{this.info.type}}</span>
+                    }
+                </div>
+
+                @if (this.info.armor) {
+                    <span class="armor-value">{{this.info.armor}} Armor</span>
+                }
+
+                @if (this.info.damage) {
+                    <div class="item-damage">
+                        <span class="min-max">{{this.info.damage.min}} - {{this.info.damage.max}} Damage</span>
+                        <span class="swing-speed">Speed {{this.info.damage.speed.toString().padEnd(4, "0")}}</span>
+                    </div>
+                    <span class="item-dps">({{this.info.damage.dps.toString().padEnd(4, "0")}} damage per second)</span>
+                }
+                
+                @for (stat of this.info.stats; track $index) {
+
+                    @if (stat.value < 0) {
+                        <span class="stat">{{stat.value}} {{stat.stat}}</span>
+                    }
+                    @else {
+                        <span class="stat">+{{stat.value}} {{stat.stat}}</span>
+                    }
+
+                }
+
+                @if (this.info.durability) {
+                    <span class="item-durability">Durability {{this.info.durability}} / {{this.info.durability}}</span>
+                }
+
+                @if (this.info.classLock) {
+                    <span class="item-class">Classes: 
+                    @for (class of this.info.classLock; track $index) {
+                        {{class}}
+                    }
+                    </span>
+                }
+
+                @if (this.info.levelRequirement) {
+                    <span class="item-level-requirement">Requires Level {{this.info.levelRequirement}}</span>
+                }
+
+                @if (this.info.reputation) {
+                    <span class="item-reputation">Requires {{this.info.reputation.name}} - {{this.info.reputation.level}}</span>
+                }
+
+                @for (bonus of this.info.bonuses; track $index) {
+                    <span class="uncommon item-bonus">{{bonus}}</span>
+                }
+
+                @if (this.info.itemSet) {
+                    <span class="lore set-name">{{this.info.itemSet.name}} (0/{{this.info.itemSet.setPieces.length}})</span>
+
+                    @for (piece of this.info.itemSet.setPieces; track $index) {
+                        <span class="trash set-piece">{{piece}}</span>
+                    }
+
+                    @for (bonus of this.info.itemSet.setBonuses; track $index) {
+                        <span class="trash set-bonus">({{bonus.requirement}}) Set: {{bonus.bonus}}</span>
+                    }
+                }
+
+                @if (this.info.lore) {
+                    <span class="lore item-lore">"{{this.info.lore}}"</span>
+                }
+
+                @if (this.info.boss && this.info.location) {
+                    <div class="item-type">
+                        <span class="lore item-boss">{{this.info.boss}}</span>
+                        <span class="lore item-location">{{this.info.location}}</span>
+                    </div>
+                } @else if (this.info.location && this.info.quest) {
+                    <div class="location-only">
+                        <span class="lore item-quest">Quest: {{this.info.quest}}</span>
+                        <span class="lore item-location">{{this.info.location}}</span>
+                    </div>
+                } @else if (this.info.recipe) {
+                    <div class="recipe-info">
+                        <span class="lore recipe-name">Recipe: {{this.info.recipe.name}}</span>
+                        <span class="lore recipe-profession">{{this.info.recipe.profession}}</span>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

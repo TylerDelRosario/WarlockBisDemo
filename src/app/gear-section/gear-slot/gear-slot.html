@@ -1,0 +1,58 @@
+@if (this.rightSided && !this.weapon) {
+    <div class="gear-slot right-sided">
+        @if (this.item && this.bonus) {
+            <div class="gear-icons">
+                @for (item of this.bonus; track $index) {
+                    <div class="icon-container small-icon">
+                        <app-item [size]="small" [info]="this.bonus[$index]" />
+                    </div>
+                }
+
+                <div class="icon-container">
+                    <app-item [size]="medium" [info]="this.item.piece" />
+                </div> 
+            </div>
+
+            
+            <h4 class="{{this.item.piece.quality}}">{{this.item.piece.name}}</h4>  
+        }
+    </div>
+} @else if(!this.weapon) {
+    <div class="gear-slot">
+        @if (this.item && this.bonus) {
+            <div class="gear-icons">
+                @for (item of this.bonus; track $index) {
+                    <div class="icon-container small-icon">
+                        <app-item [size]="small" [info]="this.bonus[$index]" />
+                    </div>
+                }
+
+                <div class="icon-container">
+                    <app-item [size]="medium" [info]="this.item.piece" />
+                </div> 
+            </div>
+
+            
+            <h4 class="{{this.item.piece.quality}}">{{this.item.piece.name}}</h4>  
+        }
+    </div>
+} @else {
+    <div class="weapon-slot">
+        @if (this.item && this.bonus) {
+            <div class="weapon-icons">
+                @for (item of this.bonus; track $index) {
+                    <div class="icon-container small-icon">
+                        <app-item [size]="small" [info]="this.bonus[$index]" />
+                    </div>
+                }
+
+                <div class="icon-container">
+                    <app-item [size]="medium" [info]="this.item.piece" />
+                </div> 
+            </div>
+
+            
+            <h4 class="{{this.item.piece.quality}}">{{this.item.piece.name}}</h4>  
+        }
+    </div>
+}

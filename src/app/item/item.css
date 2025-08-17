@@ -1,0 +1,76 @@
+
+.item-container {
+    cursor: pointer;
+    background-size: cover;
+}
+
+.item-container .tile {
+    background-size: cover;
+}
+
+.tile-inset {
+    left: 3px;
+    top: 3px;
+    position: relative;
+    display: block;
+    border: 0;
+    background: url(https://wow.zamimg.com/images/Icon/medium/border/default.png) no-repeat;
+    background-size: cover;
+}
+
+.tooltip {
+    background-color: rgb(14, 14, 39);
+    width: 300px;
+    position: absolute;
+    padding: 3px;
+    z-index: 30;
+
+    border-style: solid;
+    border-width: 5px;
+    border-image: url(https://assets.codepen.io/13471/wow-tooltip-border-2.png) 5 repeat;
+    border-radius: 4px;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: white;
+}
+
+.item-name {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.item-type {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-lore {
+    padding-bottom: 0px;
+}
+
+.set-piece {
+    padding-left: 6px;
+}
+
+.location-only {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipe-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-damage {
+    display: flex;
+    justify-content: space-between;
+}
+
+span {
+    display: block;
+    padding-top: 3px;
+}

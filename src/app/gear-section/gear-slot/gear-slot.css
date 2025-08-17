@@ -1,0 +1,69 @@
+h1 {
+    text-align: center;
+}
+
+.gear-icons {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.right-sided {
+    flex-direction: row-reverse;
+}
+
+.right-sided .gear-icons {
+    flex-direction: row-reverse;
+}
+
+.right-sided h4 {
+    text-align: right;
+}
+
+.gear-slot {
+    display: flex;
+    align-items: center;
+    margin: 10px 15px;
+    width: 325px;
+}
+
+.weapon-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+.weapon-slot h4 {
+    text-align: center;
+}
+
+.weapon-icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container {
+    margin: 2px;
+}
+
+h4 {
+    margin: 10px 0px 0px 10px;
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .gear-slot h4{
+    font-size: 0.6rem;
+  }
+
+  .gear-slot {
+    margin: 0px;
+    width: 175px;
+  }
+
+  .weapon-slot h4 {
+    font-size: 0.6rem;
+  }
+}

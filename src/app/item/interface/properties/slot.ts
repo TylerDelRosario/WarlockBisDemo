@@ -1,0 +1,23 @@
+export enum Slot {
+    head = "Head",
+    neck = "Neck",
+    shoulder = "Shoulder",
+    chest = "Chest",
+    back = "Back",
+    tabard = "Tabard",
+    shirt = "Shirt",
+    wrist = "Wrist",
+    hands = "Hands",
+    waist = "Waist",
+    legs = "Legs",
+    feet = "Feet",
+    trinket = "Trinket",
+    finger = "Finger",
+    oneHand = "One Hand",
+    twoHand = "Two Hand",
+    mainHand = "Main Hand",
+    offHand = "Off Hand",
+    ranged = "Ranged",
+    wand = "Wand",
+    ammo = "Ammo"
+}

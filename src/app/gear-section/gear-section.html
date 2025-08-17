@@ -1,0 +1,75 @@
+<div class="gear-container">
+    <h1>Phase 1 - Ambershire</h1>
+    <nav>
+        <div class="current-spec">
+            <select [formControl]="setOptions">
+                <option>Affliction</option>
+                <option>SM/Ruin</option>
+            </select>
+        </div>
+        <div class="current-spec">
+            <select [formControl]="specOptions">
+                <option>Recommended</option>
+                <option>Min/Max</option>
+                <option>Dungeons Only</option>
+            </select>
+        </div>
+        <div class="current-spec">
+            <select>
+                <option>Phase 1</option>
+            </select>
+        </div>
+    </nav>
+    <div class="gearset">
+        <div class="armor">
+            <div class="left-side side">
+                <app-gear-slot [item]="this.head()" [bonus]="this.head()?.bonus" />
+                <app-gear-slot [item]="this.neck()" [bonus]="this.neck()?.bonus" />
+                <app-gear-slot [item]="this.shoulder()" [bonus]="this.shoulder()?.bonus" />
+                <app-gear-slot [item]="this.back()" [bonus]="this.back()?.bonus" />
+                <app-gear-slot [item]="this.robe()" [bonus]="this.robe()?.bonus" />
+                <app-gear-slot [item]="this.wrist()" [bonus]="this.wrist()?.bonus" />
+                <app-gear-slot [item]="this.hands()" [bonus]="this.hands()?.bonus" />
+            </div>
+            <div class="right-side side">
+                <app-gear-slot [item]="this.waist()" [bonus]="this.waist()?.bonus" [rightSided]="true"/>
+                <app-gear-slot [item]="this.leggings()" [bonus]="this.leggings()?.bonus" [rightSided]="true"/>
+                <app-gear-slot [item]="this.feet()" [bonus]="this.feet()?.bonus" [rightSided]="true"/>
+                <app-gear-slot [item]="this.ringOne()" [bonus]="this.ringOne()?.bonus" [rightSided]="true"/>
+                <app-gear-slot [item]="this.ringTwo()" [bonus]="this.ringTwo()?.bonus" [rightSided]="true"/>
+                <app-gear-slot [item]="this.trinketOne()" [bonus]="this.trinketOne()?.bonus" [rightSided]="true"/>
+                <app-gear-slot [item]="this.trinketTwo()" [bonus]="this.trinketTwo()?.bonus" [rightSided]="true"/>
+            </div>
+        </div>
+        <div class="weaponset">
+
+            @if (this.oneHanded) {
+                <app-gear-slot [weapon]="true" [item]="this.one_hand()" [bonus]="this.one_hand()?.bonus" />
+                <app-gear-slot [weapon]="true" [item]="this.offhand()" [bonus]="this.offhand()?.bonus" />
+            } @else {
+                <app-gear-slot [weapon]="true" [item]="this.two_hand()" [bonus]="this.two_hand()?.bonus" />
+            }
+            <app-gear-slot [weapon]="true" [item]="this.wands()" [bonus]="this.wands()?.bonus" />
+        
+        </div>
+    </div>
+
+    <div class="gear-tables">
+        <app-gear-table [name]="'Head Pieces'" [items]="this.currentSpec.head" />
+        <app-gear-table [name]="'Neck Pieces'" [items]="this.currentSpec.neck" />
+        <app-gear-table [name]="'Shoulder Pieces'" [items]="this.currentSpec.shoulder" />
+        <app-gear-table [name]="'Cloaks'" [items]="this.currentSpec.back" />
+        <app-gear-table [name]="'Robes'" [items]="this.currentSpec.robe" />
+        <app-gear-table [name]="'Bracers'" [items]="this.currentSpec.wrist" />
+        <app-gear-table [name]="'Gloves'" [items]="this.currentSpec.hands" />
+        <app-gear-table [name]="'Waist'" [items]="this.currentSpec.waist" />
+        <app-gear-table [name]="'Leggings'" [items]="this.currentSpec.leggings" />
+        <app-gear-table [name]="'Footwear'" [items]="this.currentSpec.feet" />
+        <app-gear-table [name]="'Rings'" [items]="this.currentSpec.rings" />
+        <app-gear-table [name]="'Trinkets'" [items]="this.currentSpec.trinkets" />
+        <app-gear-table [name]="'One Hand'" [items]="this.currentSpec.one_hand" />
+        <app-gear-table [name]="'Off Hand'" [items]="this.currentSpec.offhand" />
+        <app-gear-table [name]="'Staves'" [items]="this.currentSpec.two_hand" />
+        <app-gear-table [name]="'Wands'" [items]="this.currentSpec.wands" />
+    </div>
+</div>

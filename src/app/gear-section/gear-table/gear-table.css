@@ -1,0 +1,45 @@
+.gear-table {
+    margin-bottom: 20px;
+}
+h3 {
+    font-family: Fontin, Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    background: -webkit-linear-gradient(270deg, #FF7757 0%, #F1C22D 100%);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin: 10px 0px;
+    font-size: 2rem;
+}
+
+table {
+    background-color: #3f3f3f;
+    color: white;
+
+    font-family: Fontin, Arial, Arial, Helvetica, sans-serif;
+}
+
+thead {
+    background-color: #28292b;
+}
+
+td {
+    padding: 5px;
+
+    border-bottom: 1px solid #28292b;
+    border-right: 1px solid #28292b;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    width: 200px;
+}
+
+.icon span {
+    margin: 10px 5px 0px 5px;
+}

@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Fontin';
+    src: url('assets/font/fontin-sans.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: rgba(24, 20, 18, .95);
+    height: 400vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fontin', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+
+.trash {
+    color: #9d9d9d;
+}
+
+.common {
+    color: white;
+}
+
+.uncommon {
+    color: #24ee10;
+}
+
+.rare {
+    color: #0070DD;
+}
+
+.epic {
+    color: #ad23ed;
+}
+
+.legendary {
+    color: #fa7c18;
+}
+
+.lore {
+    color: #FFD100;
+}

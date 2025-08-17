@@ -1,0 +1,41 @@
+<div class="gear-table">
+    <h3>{{this.name}}</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Rank</td>
+                <td>Item</td>
+                <td>Source</td>
+                <td>Location</td>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of this.items; track $index) {
+                <tr>
+                    <td>{{item.quality}}</td>
+                    <td class="icon">
+                        <app-item [size]="small" [info]="item.piece" />
+                        <span class="{{item.piece.quality}}">{{item.piece.name}}</span>
+                    </td>
+                    
+                    @if (item.piece.boss && item.piece.location) {
+                        <td>{{item.piece.boss}}</td>
+                        <td>{{item.piece.location}}</td>
+                    }
+                    @else if(item.piece.reputation) {
+                        <td>{{item.piece.reputation.name}}</td>
+                        <td>{{item.piece.reputation.level}}</td>
+                    }
+                    @else if(item.piece.recipe){
+                        <td>{{item.piece.recipe.name}}</td>
+                        <td>{{item.piece.recipe.profession}}</td>
+                    }
+                    @else if (item.piece.quest) {
+                        <td>{{item.piece.quest}}</td>
+                        <td>{{item.piece.location}}</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
